@@ -60,3 +60,10 @@
 - [x] Documentare codice
 - [x] Creare manuale utente
 - [x] Preparare per il rilascio
+
+## 9. Pubblicazione Online
+- [x] Configurare progetto per GitHub Pages
+- [x] Inizializzare repository Git locale
+- [x] Preparare per la pubblicazione su GitHub
+- [ ] Pubblicare su GitHub Pages
+- [ ] Verificare funzionamento online
