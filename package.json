@@ -2,7 +2,7 @@
   "name": "web-admin",
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://partsdelivery.github.io/partsdelivery-app",
+  "homepage": "https://battibimmer96.github.io/partsdelivery-app-1",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
