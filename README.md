@@ -1,64 +1,77 @@
-# Istruzioni per risolvere il problema della pagina bianca su GitHub Pages
+# PartsDelivery App
 
-Questo documento fornisce istruzioni dettagliate per risolvere il problema della pagina bianca che stai riscontrando con la tua applicazione PartsDelivery su GitHub Pages.
+Applicazione completa per la gestione delle consegne di ricambi auto con tracking in tempo reale e ottimizzazione dei percorsi.
 
-## Il problema
+## Struttura del Progetto
 
-Il problema è causato da una discrepanza tra il percorso configurato nel progetto originale (`/partsdelivery-app/`) e il percorso effettivo del tuo repository su GitHub (`/partsdelivery-app-1/`).
+- `/backend`: Backend Firebase (autenticazione, database, notifiche)
+- `/web-admin`: Interfaccia amministrativa web (React.js)
+- `/mobile-app`: App per corrieri (React Native/Expo)
+- `/docs`: Documentazione completa del progetto
 
-## Soluzione
+## Funzionalità Principali
 
-Per risolvere il problema, è necessario modificare alcuni file di configurazione per adattarli al percorso corretto del tuo repository.
+### Admin (Web App)
+- Gestione rubrica clienti con indirizzi e note
+- Creazione ordini e assegnazione a corrieri
+- Visualizzazione in tempo reale dei corrieri su mappa
+- Stato di ogni consegna aggiornato
+- Ottimizzazione percorsi
 
-### File da modificare:
+### Corriere (App Mobile)
+- Login sicuro
+- Visualizzazione consegne assegnate
+- Riordinamento tappe (drag & drop)
+- Navigazione integrata con Google Maps
+- Aggiornamento stato consegne
+- Invio posizione in tempo reale
 
-1. **vite.config.js**: Aggiornare il base path
-2. **package.json**: Aggiornare l'URL della homepage
-3. **index.html**: Verificare che i percorsi siano relativi
-4. **src/App.jsx**: Assicurarsi che il router funzioni correttamente
+### Cliente
+- Link di tracking con posizione corriere
+- Tempo stimato di arrivo (ETA)
+- Dettagli ordine
 
-## Istruzioni passo-passo
+## Tecnologie Utilizzate
 
-1. **Scarica** il file `fix-white-page.zip` allegato a questo messaggio
-2. **Estrai** il contenuto dell'archivio
-3. **Sostituisci** i seguenti file nel tuo repository con quelli estratti:
-   - `vite.config.js`
-   - `package.json`
-   - `index.html`
-   - `src/App.jsx`
+- **Frontend Web**: React.js, TailwindCSS, Google Maps API
+- **App Mobile**: React Native (Expo)
+- **Backend**: Firebase (Auth, Firestore, Cloud Functions)
+- **Tracking**: Fused Location Provider API, Firestore
+- **Ottimizzazione**: Google Directions API, Distance Matrix API
 
-4. **Esegui** i seguenti comandi per ricostruire e ridistribuire l'applicazione:
+## Installazione
+
+### Web Admin
+```bash
+cd web-admin
+npm install
+npm run dev
+```
+
+### App Mobile
+```bash
+cd mobile-app
+npm install
+npx expo start
+```
+
+## Deployment
+
+Per pubblicare l'applicazione su GitHub Pages:
 
 ```bash
-# Installa le dipendenze (se necessario)
+cd web-admin
 npm install
-
-# Ricostruisci l'applicazione
-npm run build
-
-# Ridistribuisci su GitHub Pages
 npm run deploy
 ```
 
-5. **Attendi** che il deployment sia completato (può richiedere alcuni minuti)
-6. **Verifica** che l'applicazione funzioni correttamente visitando: `https://battibimmer96.github.io/partsdelivery-app-1/`
+## Documentazione
 
-## Spiegazione delle modifiche
+La documentazione completa è disponibile nella cartella `/docs`:
+- Manuale utente
+- Documentazione tecnica
+- Report di test
 
-1. **vite.config.js**: Abbiamo modificato il base path da `/partsdelivery-app/` a `/partsdelivery-app-1/` per riflettere il percorso corretto del tuo repository.
+## Licenza
 
-2. **package.json**: Abbiamo aggiornato l'URL della homepage da `https://partsdelivery.github.io/partsdelivery-app` a `https://battibimmer96.github.io/partsdelivery-app-1`.
-
-3. **index.html**: Abbiamo verificato che i percorsi siano relativi e corretti.
-
-4. **src/App.jsx**: Abbiamo rimosso il parametro basename dal Router poiché non è necessario quando si utilizza HashRouter, che gestisce automaticamente i percorsi indipendentemente dal base path.
-
-## Risoluzione dei problemi
-
-Se riscontri ancora problemi dopo aver applicato queste modifiche:
-
-1. **Controlla** la console del browser per eventuali errori (F12 > Console)
-2. **Verifica** che tutti i file siano stati sostituiti correttamente
-3. **Assicurati** che il deployment sia stato completato con successo
-
-Per ulteriori informazioni, consulta la [documentazione ufficiale di Vite su GitHub Pages](https://vitejs.dev/guide/static-deploy.html#github-pages).
+MIT
