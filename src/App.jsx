@@ -1,18 +1,17 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './utils/AuthContext';
-import './App.css';
+import './index.css';
 
-// Importazione pagine (da creare)
+// Importazione pagine
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Clients from './pages/Clients';
-import ClientDetail from './pages/ClientDetail';
 import Orders from './pages/Orders';
-import OrderDetail from './pages/OrderDetail';
 import Couriers from './pages/Couriers';
-import CourierDetail from './pages/CourierDetail';
-import Settings from './pages/Settings';
+import LiveTracking from './pages/LiveTracking';
+import ClientTracking from './pages/ClientTracking';
+import RouteOptimization from './pages/RouteOptimization';
 
 // Componente per le rotte protette
 const PrivateRoute = ({ children }) => {
@@ -45,21 +44,9 @@ function App() {
               </PrivateRoute>
             } />
             
-            <Route path="/clients/:id" element={
-              <PrivateRoute>
-                <ClientDetail />
-              </PrivateRoute>
-            } />
-            
             <Route path="/orders" element={
               <PrivateRoute>
                 <Orders />
-              </PrivateRoute>
-            } />
-            
-            <Route path="/orders/:id" element={
-              <PrivateRoute>
-                <OrderDetail />
               </PrivateRoute>
             } />
             
@@ -69,15 +56,21 @@ function App() {
               </PrivateRoute>
             } />
             
-            <Route path="/couriers/:id" element={
+            <Route path="/live-tracking" element={
               <PrivateRoute>
-                <CourierDetail />
+                <LiveTracking />
               </PrivateRoute>
             } />
             
-            <Route path="/settings" element={
+            <Route path="/client-tracking" element={
               <PrivateRoute>
-                <Settings />
+                <ClientTracking />
+              </PrivateRoute>
+            } />
+            
+            <Route path="/route-optimization" element={
+              <PrivateRoute>
+                <RouteOptimization />
               </PrivateRoute>
             } />
           </Routes>
